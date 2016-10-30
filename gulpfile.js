@@ -109,7 +109,7 @@ gulp.task('create-js', ['webpack'], function() {
 
 gulp.task('webpack', ['babel'], function() {
   return gulp.src(['./temp/**/*.js'])
-    .pipe(webpack())
+    .pipe(webpack().on('error', function(e) { this.emit('end'); }))
     .pipe(gulp.dest('./temp/webpack'))
 });
 

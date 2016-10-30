@@ -1,10 +1,7 @@
-.checked {
+.grocery.checked p {
     text-decoration: line-through;
 }
 
-// .grocery p {
-//   display: inline-block;
-// }
 ul {
   list-style-type: none;
 }
@@ -61,11 +58,11 @@ textarea {
 	margin-right: 15px;
 }
 
-.task {
+.grocery {
 	width: 100%;
 }
 
-.task p {
+.grocery p {
 	display: inline-block;
 }
 

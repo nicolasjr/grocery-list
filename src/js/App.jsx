@@ -5,8 +5,12 @@ import GroceryList from './containers/GroceryList';
 function App() {
   return (
     <div>
-      <AddGroceryItem />
-      <GroceryList />
+      <div className="container">
+        <AddGroceryItem />
+        <div className="row">
+          <GroceryList />
+        </div>
+      </div>
     </div>
   );
 }

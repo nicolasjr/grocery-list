@@ -1,4 +1,6 @@
-# React Boilerplate
+# Grocery List
+
+A simple implementation of a Grocery List, using React and Redux.
 
 ## Getting started
 
@@ -18,5 +20,11 @@ npm install
 ./node_modules/.bin/gulp
 ```
 
-Now you're good to go!
+* After that, run:
+```
+./node_modules/.bin/gulp serve
+```
 
+This will automatically open your browser in the application, and will also update the application with your changes.
+
+Now you're good to go!

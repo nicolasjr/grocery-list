@@ -7,9 +7,10 @@ const propTypes = {
   ).isRequired,
   onItemCheck: PropTypes.func.isRequired,
   onDeleteItem: PropTypes.func.isRequired,
+  onEditItem: PropTypes.func.isRequired,
 };
 
-function Groceries({ groceries, onItemCheck, onDeleteItem }) {
+function Groceries({ groceries, onItemCheck, onDeleteItem, onEditItem }) {
   function createItems(g) {
     const toggleItem = () => {
       onItemCheck(g.id);
@@ -17,6 +18,10 @@ function Groceries({ groceries, onItemCheck, onDeleteItem }) {
 
     const deleteItem = () => {
       onDeleteItem(g.id);
+    };
+
+    const editItem = (name) => {
+      onEditItem(g.id, name);
     };
 
     let className = 'grocery';
@@ -27,6 +32,7 @@ function Groceries({ groceries, onItemCheck, onDeleteItem }) {
       name: g.name,
       toggleItem,
       deleteItem,
+      editItem,
     };
 
     return (

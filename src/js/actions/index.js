@@ -26,3 +26,11 @@ export function deleteGrocery(id) {
     id,
   };
 }
+
+export function editGroceryName(id, name) {
+  return {
+    type: actions.editItem,
+    id,
+    name,
+  };
+}

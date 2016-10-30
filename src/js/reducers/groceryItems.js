@@ -20,6 +20,18 @@ function toggleItem(items, itemId) {
   });
 }
 
+function editItem(items, itemId, name) {
+  return items.map((i) => {
+    if (i.id !== itemId) {
+      return i;
+    }
+
+    return Object.assign({}, i, {
+      name,
+    });
+  });
+}
+
 function deleteItem(items, itemId) {
   function getItemId(item) {
     return item.id;
@@ -43,6 +55,8 @@ function groceryItems(state = [], action) {
       return toggleItem(state, action.id);
     case actions.deleteItem:
       return deleteItem(state, action.id);
+    case actions.editItem:
+      return editItem(state, action.id, action.name);
     default:
       return state;
   }

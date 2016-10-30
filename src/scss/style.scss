@@ -45,8 +45,11 @@ textarea {
 	padding-left: 20%;
 }
 
-.row {
+.grocery .row {
+  height: 40px;
 	width: 100%;
+  position: relative;
+  top: 10px;
 }
 
 .btn-task {
@@ -60,9 +63,16 @@ textarea {
 
 .grocery {
 	width: 100%;
+  height: 60px;
 }
 
-.grocery p {
+.grocery textarea {
+  height: 25px;
+  width: 200px;
+}
+
+.grocery p,
+.grocery textarea {
 	display: inline-block;
 }
 

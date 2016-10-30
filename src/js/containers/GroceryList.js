@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleGrocery, deleteGrocery } from '../actions/index';
+import { toggleGrocery, deleteGrocery, editGroceryName } from '../actions/index';
 import Groceries from '../components/Groceries';
 
 function mapStateToProps(state) {
@@ -15,6 +15,9 @@ function mapDispatchToProps(dispatch) {
     },
     onDeleteItem: (id) => {
       dispatch(deleteGrocery(id));
+    },
+    onEditItem: (id, name) => {
+      dispatch(editGroceryName(id, name));
     },
   };
 }

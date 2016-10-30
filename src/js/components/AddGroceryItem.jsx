@@ -5,7 +5,9 @@ import { addGroceryItem } from '../actions/index';
 function AddGroceryForm({ dispatch }) {
   let input;
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
+
     const itemName = input.value;
 
     if (!itemName.trim()) {
@@ -18,12 +20,10 @@ function AddGroceryForm({ dispatch }) {
   }
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Grocery..." ref={(node) => { input = node; }} />
-      <button onClick={handleSubmit}>
-        Submit
-      </button>
-    </div>
+      <input type="submit" value="Add" />
+    </form>
   );
 }
 

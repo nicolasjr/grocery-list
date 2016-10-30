@@ -5,23 +5,21 @@ const propTypes = {
   groceries: PropTypes.arrayOf(
     PropTypes.object.isRequired
   ).isRequired,
-  onItemCheck: PropTypes.func.isRequired,
-  onDeleteItem: PropTypes.func.isRequired,
-  onEditItem: PropTypes.func.isRequired,
+  actions: PropTypes.object.isRequired,
 };
 
-function Groceries({ groceries, onItemCheck, onDeleteItem, onEditItem }) {
+function Groceries({ groceries, actions }) {
   function createItems(g) {
     const toggleItem = () => {
-      onItemCheck(g.id);
+      actions.onItemCheck(g.id);
     };
 
     const deleteItem = () => {
-      onDeleteItem(g.id);
+      actions.onDeleteItem(g.id);
     };
 
     const editItem = (name) => {
-      onEditItem(g.id, name);
+      actions.onEditItem(g.id, name);
     };
 
     let className = 'grocery';

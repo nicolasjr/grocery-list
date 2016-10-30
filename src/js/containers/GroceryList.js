@@ -10,14 +10,16 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onItemCheck: (id) => {
-      dispatch(toggleGrocery(id));
-    },
-    onDeleteItem: (id) => {
-      dispatch(deleteGrocery(id));
-    },
-    onEditItem: (id, name) => {
-      dispatch(editGroceryName(id, name));
+    actions: {
+      onItemCheck: (id) => {
+        dispatch(toggleGrocery(id));
+      },
+      onDeleteItem: (id) => {
+        dispatch(deleteGrocery(id));
+      },
+      onEditItem: (id, name) => {
+        dispatch(editGroceryName(id, name));
+      },
     },
   };
 }
